@@ -4,17 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Battle Arena Game</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+    <title>Abyssal Deathmatch</title>
 </head>
 <body>
     <div id="header">
         <h1>Devour or be Devoured!</h1>
+        <h2>Select your Champion and rule the Abyss!</h2>
     </div>
 
     <section id="container">
-        <a href=".">
-            <img src="/" alt="">
+        <a href="." onclick="gameOverlord.gameBegin('Viperfish')">
+            <img src="assets/images/viperfish.png" alt="Viperfish">
+            <h3>Viperfish</h3>
+            <p>Sleek and silvery, the Viperfish has teeth that are so large it can never close its mouth, instead impaling prey upon them.</p>
+        </a>
+        <a href="." onclick="gameOverlord.gameBegin('Anglerfish')">
+            <h3>AnglerFish</h3>
+            <img src="assets/images/anglerfish.png" alt="Anglerfish">
+            <p>The massive female Anglerfish drifts endlessly with its permanently attached mate, attracting prey with its glowing lure.</p>
+        </a>
+        <a href="." onclick="gameOverlord.gameBegin('GulperEel')">
+            <h3>Gulper Eel</h3>
+            <img src="assets/images/gulereel.png" alt="GulperEel">
+            <p>Essentially little more than a cavernous mouth and a digestive tract, the Gulper Eel can swallow prey larger than itself.</p>
         </a>
     </section>
+
+    <script src="assets/javascript/game.js"></script>
 </body>
 </html>
