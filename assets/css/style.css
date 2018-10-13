@@ -2,9 +2,165 @@
 body {
     font-family: 'Special Elite', cursive;
     color: white;
-    background: black;
+    background: #060910;
+}
+
+#header {
+    margin: auto;
+    height: auto;
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.25em;
 }
 
 img {
-    width: 300px;
+    width: 250px;
+}
+
+p {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.25em;
+}
+
+#container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    height: auto;
+    text-align: center;
+    margin-top: 40px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.character {
+    cursor: pointer;
+    padding: 10px;
+}
+
+@-webkit-keyframes character {
+    to {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+  @keyframes character {
+    to {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+  .character {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  }
+  .character:hover, .character:focus, .character:active {
+    -webkit-animation-name: character;
+    animation-name: character;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+  }
+
+#battleGround {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    height: 380px;
+    text-align: center;
+    margin-top: 40px;
+    display: flex;
+    align-items: flex-end;
+}
+
+#seafloor {
+    position: absolute;
+    width: 1000px;
+    align-content: center;
+}
+
+#playerCorner {
+    position: absolute;
+    left: 130px;
+	top: 140px;
+	width: 150px;
+	height: 150px;
+    margin: 0px;
+}
+
+.lookRight {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+#yourSide {
+    position: absolute;
+    left: 150px;
+    top: 50px;
+    width: 150px;
+    height: 150px;
+    margin: 0px;
+}
+
+#enemyCorner {
+    position: absolute;
+    right: 200px;
+	top: 140px;
+	width: 150px;
+	height: 150px;
+    margin: 0px;
+}
+
+#theirSide {
+    position: absolute;
+    right: 150px;
+    top: 50px;
+    width: 150px;
+    height: 150px;
+    margin: 0px;
+}
+
+#biteButton {
+    position: absolute;
+    align-content: center;
+    bottom: 40px;
+    right: 450px;
+    background: #7c2626;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+#biteButton:active {
+    background: #d00000;
+}
+
+span {
+    font-family: 'Rock Salt', cursive;
+    font-size: 1.4em;
 }

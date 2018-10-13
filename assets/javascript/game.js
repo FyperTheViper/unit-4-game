@@ -3,25 +3,28 @@ $(document).ready(function() {
     let fish = [
         viper = {
             name: "Viperfish",
-            health: 100,
-            attack: 20,
-            counterAttack: 5,
+            health: 80,
+            baseAttack: 4,
+            attack: 4,
+            counterAttack: 6,
             isPlayer: false,
             isEnemy: false,
         },
         angler = {
             name: "Anglerfish",
-            health: 150,
-            attack: 5,
-            counterAttack: 15,
+            health: 120,
+            baseAttack: 3,
+            attack: 3,
+            counterAttack: 8,
             isPlayer: false,
             isEnemy: false,
         },
         gulper = {
             name: "Gulper Eel",
-            health: 140,
-            attack: 10,
-            counterAttack: 15,
+            health: 100,
+            baseAttack: 2,
+            attack: 2,
+            counterAttack: 10,
             isPlayer: false,
             isEnemy: false,
         }];
@@ -33,7 +36,10 @@ $(document).ready(function() {
     let enemySelected = false;
     let enemiesLeft = fish.length - 1;
     let theGamesBegin = false;
-    //let fightTheme = new Audio ("assets/sound/fightmusic.mp3")
+    let chomp = new Audio ("assets/sound/bite.mp3");
+    let tragic = new Audio ("assets/sound/sadtheme.mp3");
+    let woohoo = new Audio ("assets/sound/victory.mp3");
+    let fightTheme = new Audio ("assets/sound/fightmusic.mp3")
 
     playerSelect();
     enemySelect();
@@ -45,9 +51,10 @@ $(document).ready(function() {
                 player = viper;
                 $("#viper").appendTo("#playerCorner");
                 $("#playerName").text(viper.name);
-                $("#playerHealth").text("Health");
+                $("#playerHealth").text("Health:");
                 $("#playerRemainingHealth").text(viper.health);
                 $("#viperBio").hide();
+                $("#viper").addClass('lookRight');
                 $("#instructions").text("Choose a Delicious Enemy!");
                 playerSelected = true;
                 viper.isPlayer = true;
@@ -59,9 +66,10 @@ $(document).ready(function() {
                 player = angler;
                 $("#angler").appendTo("#playerCorner");
                 $("#playerName").text(angler.name);
-                $("#playerHealth").text("Health");
+                $("#playerHealth").text("Health:");
                 $("#playerRemainingHealth").text(angler.health);
                 $("#anglerBio").hide();
+                $("#angler").addClass('lookRight');
                 $("#instructions").text("Choose a Delicious Enemy!");
                 playerSelected = true;
                 angler.isPlayer = true;
@@ -73,9 +81,10 @@ $(document).ready(function() {
                 player = gulper;
                 $("#gulper").appendTo("#playerCorner");
                 $("#playerName").text(gulper.name);
-                $("#playerHealth").text("Health");
+                $("#playerHealth").text("Health:");
                 $("#playerRemainingHealth").text(gulper.health);
                 $("#gulperBio").hide();
+                $("#gulper").addClass('lookRight');
                 $("#instructions").text("Choose a Delicious Enemy!");
                 playerSelected = true;
                 gulper.isPlayer = true;
@@ -90,7 +99,7 @@ $(document).ready(function() {
                 enemy = viper;
                 $("#viper").appendTo("#enemyCorner");
                 $("#enemyName").text(viper.name);
-                $("#enemyHealth").text("Health");
+                $("#enemyHealth").text("Health:");
                 $("#enemyRemainingHealth").text(viper.health);
                 $("#viperBio").hide();
                 enemySelected = true;
@@ -105,7 +114,7 @@ $(document).ready(function() {
                 enemy = angler;
                 $("#angler").appendTo("#enemyCorner");
                 $("#enemyName").text(angler.name);
-                $("#enemyHealth").text("Health");
+                $("#enemyHealth").text("Health:");
                 $("#enemyRemainingHealth").text(angler.health);
                 $("#anglerBio").hide();
                 enemySelected = true;
@@ -120,7 +129,7 @@ $(document).ready(function() {
                 enemy = gulper;
                 $("#gulper").appendTo("#enemyCorner");
                 $("#enemyName").text(gulper.name);
-                $("#enemyHealth").text("Health");
+                $("#enemyHealth").text("Health:");
                 $("#enemyRemainingHealth").text(gulper.health);
                 $("#gulperBio").hide();
                 enemySelected = true;
@@ -134,11 +143,12 @@ $(document).ready(function() {
     //when both fish are set onto the arena
     function fishReady() {
         if (theGamesBegin === true)
-        //fightTheme.play();
+        fightTheme.play();
         $("#viperBio").hide();
         $("#anglerBio").hide();
         $("#gulperBio").hide();
         $("#biteButton").show();
+        $("#instructions").hide();
     }
 
     function gameManager() {
@@ -175,11 +185,12 @@ $(document).ready(function() {
     }
 
     function biteAdder() {
-        player.attack = player.attack + player.attack;
+        player.attack = player.attack + player.baseAttack;
     }
 
     function goTime() {
         $("#biteButton").on("click", function() {
+            chomp.play();
             if (theGamesBegin === true) {
                 bite();
                 biteAdder();
@@ -196,11 +207,16 @@ $(document).ready(function() {
       
     function win() {
         theGamesBegin = false;
+        woohoo.play();
         reset();
     }
 
     function lose() {
         theGamesBegin = false;
+        $("#viper").hide();
+        $("#angler").hide();
+        $("#gulper").hide();
+        tragic.play();
         reset();
     }
 
@@ -208,28 +224,31 @@ $(document).ready(function() {
         let fish = [
             viper = {
                 name: "Viperfish",
-                health: 100,
-                attack: 20,
-                counterAttack: 5,
+                health: 80,
+                baseAttack: 4,
+                attack: 4,
+                counterAttack: 6,
                 isPlayer: false,
                 isEnemy: false,
             },
             angler = {
                 name: "Anglerfish",
-                health: 150,
-                attack: 5,
-                counterAttack: 15,
+                health: 120,
+                baseAttack: 3,
+                attack: 3,
+                counterAttack: 8,
                 isPlayer: false,
                 isEnemy: false,
             },
             gulper = {
                 name: "Gulper Eel",
-                health: 140,
-                attack: 10,
-                counterAttack: 15,
+                health: 100,
+                baseAttack: 2,
+                attack: 2,
+                counterAttack: 10,
                 isPlayer: false,
                 isEnemy: false,
-            }]
+            }];
         
         playerSelected = false;
         enemySelected = false;
