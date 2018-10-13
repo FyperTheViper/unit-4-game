@@ -7,31 +7,57 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Abyssal Deathmatch</title>
 </head>
 <body>
     <div id="header">
         <h1>Devour or be Devoured!</h1>
-        <h2>Select your Champion and rule the Abyss!</h2>
+        <h2 id="instructions">Select your Champion and rule the Abyss!</h2>
     </div>
 
     <section id="container">
-        <a href="." onclick="gameOverlord.gameBegin('Viperfish')">
-            <img src="assets/images/viperfish.png" alt="Viperfish">
-            <h3>Viperfish</h3>
-            <p>Sleek and silvery, the Viperfish has teeth that are so large it can never close its mouth, instead impaling prey upon them.</p>
-        </a>
-        <a href="." onclick="gameOverlord.gameBegin('Anglerfish')">
-            <h3>AnglerFish</h3>
-            <img src="assets/images/anglerfish.png" alt="Anglerfish">
-            <p>The massive female Anglerfish drifts endlessly with its permanently attached mate, attracting prey with its glowing lure.</p>
-        </a>
-        <a href="." onclick="gameOverlord.gameBegin('GulperEel')">
-            <h3>Gulper Eel</h3>
-            <img src="assets/images/gulereel.png" alt="GulperEel">
-            <p>Essentially little more than a cavernous mouth and a digestive tract, the Gulper Eel can swallow prey larger than itself.</p>
-        </a>
+        <div>
+            <img id="viper" src="assets/images/viperfish.png" alt="Viperfish">
+            <img id="viperDead" src="assets/images/deadviperfish.png" alt="RIPViperfish" style="display: none;">
+            <div id="viperBio">
+                <h3>Viperfish</h3>
+                <p>Sleek and silvery, the Viperfish can never close its mouth because its teeth are so large, instead impaling prey upon them.</p>
+            </div>
+        </div>
+        <div>
+            <img id="angler" src="assets/images/anglerfish.png" alt="Anglerfish">
+            <img id="anglerDead" src="assets/images/deadanglerfish.png" alt="RIPAnglerfish" style="display: none;">
+            <div id="anglerBio">
+                <h3>AnglerFish</h3>
+                <p>The massive female Anglerfish drifts endlessly with its permanently attached mate, attracting prey with its glowing lure.</p>
+            </div>
+        </div>
+        <div>
+            <img id="gulper" src="assets/images/gulpereel.png" alt="GulperEel">
+            <img id="gulperDead" src="assets/images/deadgulpereel.png" alt="RIPGulperEel" style="display: none;">
+            <div id="gulperBio">
+                <h3>Gulper Eel</h3>
+                <p>Essentially little more than a cavernous mouth and a digestive tract, the Gulper Eel can swallow prey larger than itself.</p>
+            </div>
+        </div>
     </section>
+
+
+    <div id="battleGround">
+        <div id="playerName"></div>
+        <div id="playerHealth"></div>
+        <div id="playerRemainingHealth"></div>
+        <div id="enemyName"></div>
+        <div id="enemyHealth"></div>
+        <div id="enemyRemainingHealth"></div>
+        <div id="playerCorner"></div>
+        <div id="enemyCorner"></div>
+    </div>
+
+    <button id="biteButton" style="display: none;">
+        <span>BITE!</span>
+    </button>
 
     <script src="assets/javascript/game.js"></script>
 </body>
