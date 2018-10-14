@@ -42,44 +42,15 @@ p {
     margin-top: 40px;
     display: flex;
     align-items: flex-end;
+    justify-content: center;
 }
 
 .character {
     cursor: pointer;
     padding: 10px;
+    display: flex;
+    align-items: flex-end;
 }
-
-@-webkit-keyframes character {
-    to {
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
-    }
-  }
-  @keyframes character {
-    to {
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
-    }
-  }
-  .character {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  }
-  .character:hover, .character:focus, .character:active {
-    -webkit-animation-name: character;
-    animation-name: character;
-    -webkit-animation-duration: 0.3s;
-    animation-duration: 0.3s;
-    -webkit-animation-timing-function: linear;
-    animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
-    animation-direction: alternate;
-  }
 
 #battleGround {
     position: relative;
@@ -99,7 +70,23 @@ p {
     align-content: center;
 }
 
+#gameOverText {
+    position: absolute;
+    top: 0px;
+    right: 400px;
+    font-size: 3em;
+}
+
 #playerCorner {
+    position: absolute;
+    left: 130px;
+	top: 140px;
+	width: 150px;
+	height: 150px;
+    margin: 0px;
+}
+
+#characterWin {
     position: absolute;
     left: 130px;
 	top: 140px;
@@ -155,6 +142,17 @@ p {
     border: none;
 }
 
+#doOver {
+    position: absolute;
+    align-content: center;
+    bottom: -120px;
+    right: 420px;
+    background: #7c2626;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
 #biteButton:active {
     background: #d00000;
 }
@@ -162,4 +160,9 @@ p {
 span {
     font-family: 'Rock Salt', cursive;
     font-size: 1.4em;
+}
+
+#doOver {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.3em;
 }

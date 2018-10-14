@@ -15,29 +15,29 @@
 </head>
 <body>
     <div id="header">
-        <h1>Devour or be Devoured!</h1>
+        <h1 id="titleText">Devour or be Devoured!</h1>
         <h2 id="instructions">Select your Champion and rule the Abyss!</h2>
     </div>
 
     <section id="container">
         <div class="character">
-            <img id="viper" src="assets/images/viperfish.png" alt="Viperfish">
+            <img class="characterPic" id="viper" src="assets/images/viperfish.png" alt="Viperfish">
             <div id="viperBio">
-                <h3>Viperfish</h3>
+                <h3 id="healthBarV"></h3>
                 <p>Sleek and silvery, the Viperfish can never close its mouth because its teeth are so large, instead it impales prey upon them.</p>
             </div>
         </div>
         <div class="character">
-            <img id="angler" src="assets/images/anglerfish.png" alt="Anglerfish">
+            <img class="characterPic" id="angler" src="assets/images/anglerfish.png" alt="Anglerfish">
             <div id="anglerBio">
-                <h3>AnglerFish</h3>
+                <h3 id="healthbarA"></h3>
                 <p>The massive female Anglerfish drifts endlessly with its permanently attached mate, attracting prey with its glowing lure.</p>
             </div>
         </div>
         <div class="character">
-            <img id="gulper" src="assets/images/gulpereel.png" alt="GulperEel">
+            <img class="characterPic" id="gulper" src="assets/images/gulpereel.png" alt="GulperEel">
             <div id="gulperBio">
-                <h3>Gulper Eel</h3>
+                <h3 id="healthbarG"></h3>
                 <p>Essentially little more than a cavernous mouth and a digestive tract, the Gulper Eel can swallow prey larger than itself.</p>
             </div>
         </div>
@@ -45,6 +45,7 @@
 
     <div id="battleGround">
     <img id="seafloor" src="assets/images/seafloor.png" alt="battleground">
+        <div id="gameOverText"></div>
         <div id="yourSide">
             <div id="playerName"></div>
             <div id="playerHealth"></div>
@@ -54,17 +55,32 @@
             <div id="enemyName"></div>
             <div id="enemyHealth"></div>
             <div id="enemyRemainingHealth"></div>
+            <div id="enemyCounterAttack"></div>
         </div>
         <div id="playerCorner"></div>
+            <div id="characterWin">
+                <div id="playerCharacter">
+                    <img id="viperWin" src="assets/images/viperfishWin.png" alt="WooViperfish" style="display: none;">
+                    <img id="anglerWin" src="assets/images/anglerfishWin.png" alt="WooAnglerfish" style="display: none;">
+                    <img id="gulperWin" src="assets/images/gulpereelWin.png" alt="WooGulperEel" style="display: none;">
+                </div>
+                <img id="tombstone" src="assets/images/tombstone.png" alt="RIPFishy" style="display: none;">
+            </div>
         <div id="enemyCorner">
             <img id="viperDead" src="assets/images/deadviperfish.png" alt="RIPViperfish" style="display: none;">
             <img id="anglerDead" src="assets/images/deadanglerfish.png" alt="RIPAnglerfish" style="display: none;">
             <img id="gulperDead" src="assets/images/deadgulpereel.png" alt="RIPGulperEel" style="display: none;">
         </div>
+        
         <button id="biteButton" style="display: none;">
-                <span>BITE!</span>
+            <span>BITE!</span>
+        </button>
+
+        <button id="doOver" value="Refresh Page" onClick="window.location.reload()" style="display: none;">
+            <p id="resetText">Another Round?</p>
         </button>
     </div>
+
 
     <script src="assets/javascript/game.js"></script>
 </body>
