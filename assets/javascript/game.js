@@ -157,6 +157,7 @@ $(document).ready(function() {
         } else {
             theGamesBegin = false;
                 if (enemiesLeft === 1) {
+                    //ghost();
                     //create if statements for each fish
                    //setTimeout(function(){$("#viper").attr("src","assets/images/deadviperfish.png")}, 1000 * 2.5);
                    //setTimeout(function(){$("#angler").attr("src","assets/images/deadanglerfish.png")}, 1000 * 2.5);
@@ -168,7 +169,6 @@ $(document).ready(function() {
         $("#instructions").text("Choose a Delicious Enemy!");
         enemySelect();
         }
-        console.log(enemiesLeft);
     }
 
     function bite() {
@@ -219,6 +219,21 @@ $(document).ready(function() {
         tragic.play();
         reset();
     }
+
+    /*function ghost() {
+        if (enemy === viper) {
+            $("#viper").hide();
+            $("#viperDead").show();
+        } else if (enemy === angler) {
+            $("#angler").hide();
+            $("anglerDead").show();
+            console.log(enemy)
+        } else if (enemy === gulper) {
+            $("#gulper").hide();
+            $("gulperDead").show();
+        }
+
+    } */
 
     function reset() {
         let fish = [

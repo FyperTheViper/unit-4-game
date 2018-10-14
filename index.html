@@ -22,7 +22,6 @@
     <section id="container">
         <div class="character">
             <img id="viper" src="assets/images/viperfish.png" alt="Viperfish">
-            <img id="viperDead" src="assets/images/deadviperfish.png" alt="RIPViperfish" style="display: none;">
             <div id="viperBio">
                 <h3>Viperfish</h3>
                 <p>Sleek and silvery, the Viperfish can never close its mouth because its teeth are so large, instead it impales prey upon them.</p>
@@ -30,7 +29,6 @@
         </div>
         <div class="character">
             <img id="angler" src="assets/images/anglerfish.png" alt="Anglerfish">
-            <img id="anglerDead" src="assets/images/deadanglerfish.png" alt="RIPAnglerfish" style="display: none;">
             <div id="anglerBio">
                 <h3>AnglerFish</h3>
                 <p>The massive female Anglerfish drifts endlessly with its permanently attached mate, attracting prey with its glowing lure.</p>
@@ -38,7 +36,6 @@
         </div>
         <div class="character">
             <img id="gulper" src="assets/images/gulpereel.png" alt="GulperEel">
-            <img id="gulperDead" src="assets/images/deadgulpereel.png" alt="RIPGulperEel" style="display: none;">
             <div id="gulperBio">
                 <h3>Gulper Eel</h3>
                 <p>Essentially little more than a cavernous mouth and a digestive tract, the Gulper Eel can swallow prey larger than itself.</p>
@@ -59,7 +56,11 @@
             <div id="enemyRemainingHealth"></div>
         </div>
         <div id="playerCorner"></div>
-        <div id="enemyCorner"></div>
+        <div id="enemyCorner">
+            <img id="viperDead" src="assets/images/deadviperfish.png" alt="RIPViperfish" style="display: none;">
+            <img id="anglerDead" src="assets/images/deadanglerfish.png" alt="RIPAnglerfish" style="display: none;">
+            <img id="gulperDead" src="assets/images/deadgulpereel.png" alt="RIPGulperEel" style="display: none;">
+        </div>
         <button id="biteButton" style="display: none;">
                 <span>BITE!</span>
         </button>
