@@ -88,6 +88,7 @@ $(document).ready(function() {
                 $("#instructions").text("Choose a Delicious Enemy!");
                 playerSelected = true;
                 gulper.isPlayer = true;
+                
             }
         });
     }
@@ -157,14 +158,9 @@ $(document).ready(function() {
         } else {
             theGamesBegin = false;
                 if (enemiesLeft === 1) {
-                    //ghost();
-                    //create if statements for each fish
-                   //setTimeout(function(){$("#viper").attr("src","assets/images/deadviperfish.png")}, 1000 * 2.5);
-                   //setTimeout(function(){$("#angler").attr("src","assets/images/deadanglerfish.png")}, 1000 * 2.5);
-                   //setTimeout(function(){$("#gulper").attr("src","assets/images/deadgulpereel.png")}, 1000 * 2.5);
-
+                    ghost();
+                    setTimeout(enemySelect, 1000 * 2);
             }
-        $("#enemyCorner").empty();
         enemySelected = false;
         $("#instructions").text("Choose a Delicious Enemy!");
         enemySelect();
@@ -201,7 +197,6 @@ $(document).ready(function() {
                     biteBack();
                 }
             } 
-        
         });
     }
       
@@ -220,20 +215,21 @@ $(document).ready(function() {
         reset();
     }
 
-    /*function ghost() {
+    function ghost() {
         if (enemy === viper) {
             $("#viper").hide();
             $("#viperDead").show();
+            setTimeout(function(){$("#viperDead").hide();}, 1000 * 2);
         } else if (enemy === angler) {
             $("#angler").hide();
-            $("anglerDead").show();
-            console.log(enemy)
+            $("#anglerDead").show();
+            setTimeout(function(){$("#anglerDead").hide();}, 1000 * 2);
         } else if (enemy === gulper) {
             $("#gulper").hide();
-            $("gulperDead").show();
+            $("#gulperDead").show();
+            setTimeout(function(){$("#gulperDead").hide();}, 1000 * 2);
         }
-
-    } */
+    } 
 
     function reset() {
         let fish = [
